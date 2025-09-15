@@ -1,0 +1,491 @@
+/* --- Cài đặt chung & Reset --- */
+:root {
+    --primary-font: 'Lato', sans-serif;
+    --heading-font: 'Playfair Display', serif;
+    --background-color: #FBF8F1;
+    --text-color: #3d3d3d;
+    --primary-green: #89943B;
+    --price-bg: #D4DE8C;
+    --button-bg: #5A463B;
+    --form-title-color: #E9D320;
+    --container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+/* --- Banner chính --- */
+.hero-banner {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.hero-banner h1 {
+    font-family: var(--heading-font);
+    color: var(--primary-green);
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero-banner h2 {
+    font-family: var(--primary-font);
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+.separator-icon {
+    margin-top: 20px;
+    height: 30px;
+}
+
+/* --- Lưới sản phẩm (3 cột) --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info h3 {
+    font-family: var(--heading-font);
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.product-code {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.price-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.price {
+    background-color: var(--price-bg);
+    color: var(--text-color);
+    font-weight: 700;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.add-to-cart-btn {
+    background-color: var(--button-bg);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #43322a;
+}
+
+/* --- Khu vực Liên hệ --- */
+.order-form-section {
+    padding: 80px 0;
+    background-image: url('images/background-form.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+.order-form-section img{
+    width: 600px;
+}
+.order-form-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+.contact-wrapper {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(30, 30, 30, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-wrapper h2 {
+    font-family: var(--heading-font);
+    color: var(--form-title-color);
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.contact-wrapper p {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-btn:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+.contact-btn i {
+    margin-right: 12px;
+    font-size: 1.6rem;
+    width: 30px;
+}
+
+.contact-btn.facebook {
+    background-color: #0084FF;
+}
+
+.contact-btn.zalo {
+    background-color: #0068FF;
+}
+
+.contact-btn.phone {
+    background-color: #25D366;
+}
+
+/* --- Các nút cố định --- */
+.floating-phone-btn,
+.scroll-to-top-btn {
+    position: fixed;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.floating-phone-btn {
+    bottom: 30px;
+    left: 30px;
+    background-color: #007bff;
+}
+
+.scroll-to-top-btn {
+    bottom: 30px;
+    right: 30px;
+    background-color: #5A463B;
+}
+
+.floating-phone-btn:hover,
+.scroll-to-top-btn:hover {
+    transform: scale(1.1);
+}
+/* --- Thêm vào cuối file style.css --- */
+
+/* ======================= FOOTER STYLES ======================= */
+.site-footer {
+    background-color: var(--button-bg); /* Tái sử dụng màu nâu đậm */
+    color: #e0e0e0;
+    padding-top: 60px;
+    font-size: 0.95rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1fr; /* Chia 3 cột với tỷ lệ khác nhau */
+    gap: 40px;
+    padding-bottom: 50px;
+}
+
+.footer-col h4 {
+    font-family: var(--heading-font);
+    color: var(--form-title-color); /* Tái sử dụng màu vàng */
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.footer-col p {
+    line-height: 1.7;
+    color: #ccc;
+}
+
+.contact-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-col li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.contact-col li i {
+    font-size: 1rem;
+    margin-right: 15px;
+    margin-top: 4px;
+    width: 20px;
+    text-align: center;
+    color: var(--price-bg); /* Tái sử dụng màu xanh lá nhạt */
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-green);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+
+/* --- CẬP NHẬT PHẦN RESPONSIVE CHO FOOTER --- */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr; /* Chuyển sang 2 cột */
+    }
+    .about-col {
+        grid-column: 1 / -1; /* Cột giới thiệu chiếm toàn bộ hàng đầu tiên */
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột duy nhất */
+        text-align: center;
+    }
+    .contact-col li {
+        justify-content: center;
+    }
+}
+/* --- Responsive (cho thiết bị di động) --- */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner h1 {
+        font-size: 2.2rem;
+    }
+    .hero-banner h2 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .floating-phone-btn,
+    .scroll-to-top-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+    }
+    .floating-phone-btn {
+        left: 20px;
+    }
+    .scroll-to-top-btn {
+        right: 20px;
+    }
+}
+/* (MỚI) Responsive cho khu vực liên hệ */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột trên màn hình nhỏ */
+        gap: 40px;
+    }
+
+    .qr-code-col {
+        margin-bottom: 20px; /* Tạo khoảng cách khi xếp chồng lên nhau */
+    }
+}
+/* --- Thêm vào cuối file style.css --- */
+
+/* (MỚI) CSS cho lưới liên hệ 2 cột */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Cột trái nhỏ hơn cột phải một chút */
+    gap: 50px; /* Khoảng cách giữa 2 cột */
+    align-items: center;
+    max-width: 950px; /* Giới hạn chiều rộng tổng thể */
+    margin: 0 auto;
+}
+
+/* (MỚI) CSS cho cột chứa mã QR */
+.qr-code-col {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.qr-code-col img {
+    max-width: 100%;
+    width: 350px; /* Kích thước ảnh QR */
+    border-radius: 12px; /* Bo góc cho đẹp */
+    display: block;
+    margin: 0 auto 15px; /* Căn giữa và tạo khoảng cách với chữ bên dưới */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.qr-code-col h4 {
+    color: #fff;
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* (SỬA) Bỏ margin auto của contact-wrapper vì đã có lưới căn chỉnh */
+.contact-wrapper {
+    margin: 0;
+    max-width: none;
+}
+/* CSS cho nút cuộn lên đầu trang */
+.scroll-to-top-btn {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translateY(20px);
+}
+
+.scroll-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* CSS cho hiệu ứng sản phẩm xuất hiện khi cuộn */
+.product-card {
+    /* Các thuộc tính đã có của bạn */
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+
+    /* Thêm các thuộc tính này cho hiệu ứng */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease-out, transform 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.product-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sửa lại :hover để không bị xung đột với hiệu ứng is-visible */
+.product-card.is-visible:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
